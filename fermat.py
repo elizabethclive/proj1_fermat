@@ -46,7 +46,7 @@ def run_miller_rabin(N,k):
 
     randomList = random.sample(range(2, N-2), k)
     for a in randomList:
-        x = a**d % n
+        x = a**d % N
         if x == 1 or x == N - 1:
             continue
         for i in range(r-1):
