@@ -38,13 +38,18 @@ def run_miller_rabin(N,k):
     # You will need to implement this function and change the return value, which should be
     # either 'prime' or 'composite'.
     #
+    r = 0
+    d = N-1
+    while (d % 2 == 0):
+        d = d / 2
+        r += 1
+
     randomList = random.sample(range(2, N-2), k)
     for a in randomList:
         x = a**d % n
         if x == 1 or x == n - 1:
             continue
         for i in range(r-1):
-        # repeat r − 1 times:
             x = x**2 % n
             if x == n - 1:
                 continue
